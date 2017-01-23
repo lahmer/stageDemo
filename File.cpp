@@ -1,0 +1,50 @@
+//
+// Created by lahmer on 1/23/17.
+//
+
+#include <iostream>
+#include <fstream>
+#include "File.h"
+
+File::File(const std::string& path, const std::string &name) : name(name), path(path) {
+    std::cout<<"A new File has been created "<<name<<std::endl;
+
+    std::fstream file(path) ;
+    char c;
+    file.get(c);
+    std::cout<<path<<"  content = "<<fileContent<<std::endl;
+    int size = 0 ;
+    std::string chunk;
+
+    while(!file.eof()) {
+        if(size == chunkSize){
+            chunks.push_back(chunk);
+            chunk = "";
+            size = 0;
+        }
+        file.get(c);
+        chunk.push_back(c);
+        size++;
+    }
+
+
+}
+
+std::string File::getFileName() {
+    return name;
+}
+
+std::string File::getChunk(int index) {
+    if(index < 0)
+        return "trying to get a negative index";
+
+    if(index >= chunks.size())
+        return "outOfBoundChunkIndex";
+
+    return chunks.at(index);
+}
+
+int File::getChunkListSize() {
+    return chunks.size();
+}
+
