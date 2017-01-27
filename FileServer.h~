@@ -15,7 +15,7 @@ class FileServer {
 public:
     FileServer(const std::string &path);
     File* getFileByName(const std::string& name );
-	std::string getManifest();
+
 private:
     std::string path;
     std::vector<File> fileList;

@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11    CMakeFiles/FileServer.dir/main.cpp.o CMakeFiles/FileServer.dir/FileServer.cpp.o CMakeFiles/FileServer.dir/File.cpp.o CMakeFiles/FileServer.dir/Server.cpp.o  -o FileServer -rdynamic -lndn-cxx -lboost_system -lboost_thread -lpthread -lcrypto++ -lsqlite3 -lboost_filesystem -lboost_random -lboost_regex -lboost_chrono 

@@ -9,14 +9,14 @@
 
 int main() {
     FileServer *server = new FileServer("/home/lahmer/Desktop/server");
-	try{
-    		ndn::Face face;
-    		Server server1(face);
+try{
+    ndn::Face face;
+    Server server1(face);
 
-    		face.processEvents();
-  	}catch (const std::exception& e) {
-    		std::cerr << "ERROR: " << e.what() << std::endl;
-  	}
+    face.processEvents();
+  }catch (const std::exception& e) {
+    std::cerr << "ERROR: " << e.what() << std::endl;
+  }
 
 return 0;
 }

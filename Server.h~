@@ -53,7 +53,6 @@ private:
       if(file == NULL){
 	if(fileName == "manifest"){
 		std::cout<<"Requesting Manifes"<<std::endl;
-		os << server->getManifest();
 	}else{
 		std::cout<<"file not found: "<<fileName<<"  index= 			"<<index<<std::endl;
 	        os << "Error requesting unexisting file "<<fileName<<std::endl;
